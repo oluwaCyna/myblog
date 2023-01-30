@@ -106,6 +106,73 @@
     <section class="content">
 
       <div class="container-fluid">
+
+      <div class="row">
+      <div class="col-lg-3 col-6">
+
+<div class="small-box bg-primary">
+<div class="inner">
+<h3>44</h3>
+<p>User Registrations</p>
+</div>
+<div class="icon">
+<i class="fas fa-user-plus"></i>
+</div>
+<a href="#" class="small-box-footer">
+More info <i class="fas fa-arrow-circle-right"></i>
+</a>
+</div>
+</div>
+
+<div class="col-lg-3 col-6">
+
+<div class="small-box bg-info">
+<div class="inner">
+<h3>44</h3>
+<p>Posts Uploaded</p>
+</div>
+<div class="icon">
+<i class="fas fa-envelopes-bulk"></i>
+</div>
+<a href="#" class="small-box-footer">
+More info <i class="fas fa-arrow-circle-right"></i>
+</a>
+</div>
+</div>
+
+<div class="col-lg-3 col-6">
+
+<div class="small-box bg-warning">
+<div class="inner">
+<h3>144</h3>
+<p>Comments</p>
+</div>
+<div class="icon">
+<i class="fas fas fa-comments"></i>
+</div>
+<a href="#" class="small-box-footer">
+More info <i class="fas fa-arrow-circle-right"></i>
+</a>
+</div>
+</div>
+
+<div class="col-lg-3 col-6">
+
+<div class="small-box bg-success">
+<div class="inner">
+<h3>344</h3>
+<p>Likes</p>
+</div>
+<div class="icon">
+<i class="fas fa-thumbs-up"></i>
+</div>
+<a href="#" class="small-box-footer">
+More info <i class="fas fa-arrow-circle-right"></i>
+</a>
+</div>
+</div>
+        </div>
+
         <div class="row">
           <div class="col-12">
             <!-- Default box -->
@@ -123,7 +190,7 @@
                 </div>
               </div>
               <div class="card-body">
-                Start creating your amazing application!
+                Other stuff to be loaded here!
               </div>
               <!-- /.card-body -->
               <div class="card-footer">

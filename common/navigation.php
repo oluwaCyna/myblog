@@ -16,11 +16,18 @@
           <a class="nav-link" href="#">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Politics</a>
+          <a class="nav-link">Politics</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.php" >Register</a>
+        </li> -->
       </ul>
-      <div class="d-flex align-items-center justify-content-center gap-2">
-        <span>Hi Guest</span><i class="fa-solid fa-user"></i>
+      <div class="d-flex align-items-center justify-content-center gap">
+        <div><a class="nav-link" href="<?php echo $_SESSION['user'] ?? null ? "logout.php" : "register.php" ?>"><?php echo $_SESSION['user'] ?? null ? "Logout" : "Login/Register" ?></a></div>
+        <div><span class="pr-3"><?php  echo $_SESSION['user'] ?? null ? $_SESSION['user']['username'] : 'Guest' ?></span><i class="fa-solid fa-user"></i></div>
       </div>
     </div>
   </div>

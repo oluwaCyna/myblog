@@ -45,9 +45,12 @@ class Post {
 
     public function ViewPost() {
         $this->sql = "SELECT * FROM posts";
-        $result = $this->conn->query($this->sql);
+        $this->pages = new Paginator(10, 'p');
+        $rowCount = $this->conn->query('SELECT * FROM posts')->fetch_all(MYSQLI_ASSOC);
+        $this->pages->set_total(count($rowCount)); 
+        $result = $this->conn->query($this->sql . $this->pages->get_limit());
         if ($result->num_rows > 0) {
-            $this->posts = $result->fetch_all(MYSQLI_ASSOC);
+            $this->posts = $this->conn->query($this->sql . $this->pages->get_limit());
         }else {
             $this->posts = null;
         }
@@ -55,7 +58,7 @@ class Post {
 
     public function ViewPostPaginate() {
         $this->sql = "SELECT * FROM posts";
-        $this->pages = new Paginator(5, 'p');
+        $this->pages = new Paginator(7, 'p');
         $rowCount = $this->conn->query('SELECT * FROM posts')->fetch_all(MYSQLI_ASSOC);
         $this->pages->set_total(count($rowCount)); 
 

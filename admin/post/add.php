@@ -43,7 +43,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="./dashboard.php" class="nav-link">
+            <a href="../dashboard.php" class="nav-link">
               <i class="fa-solid fa-address-card nav-icon far"></i>
               <p>
                 Dashboard

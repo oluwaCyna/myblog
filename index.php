@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'includes/autoload.php';
 require_once __DIR__ . '/vendor/autoload.php';
 use Database\Post;
@@ -37,12 +38,12 @@ $all_post->ViewPostPaginate();
     <?php include_once "common/navigation.php" ?>
     <div class="container mt-5">
         <div class="card">
-            <div class="card-header d-flex justify-content-between">
-                <div class="d-flex align-items-center justify-content-center gap-2">
-                    <i class="fa-solid fa-table-cells-large fa-xl"></i>
-                    <i class="fa-solid fa-bars fa-xl"></i>
+            <div class="card-header">
+                <div class="d-flex align-items-center justify-content-center gap-2 float-left pt-2">
+                    <div><i class="fa-solid fa-table-cells-large fa-2xl"></i></div>
+                    <div><i class="fa-solid fa-bars fa-2xl"></i></div>
                 </div>
-                <form class="d-flex" role="search">
+                <form class="d-flex w-50 card-tools" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>

@@ -10,7 +10,7 @@ $database = new mysqli('localhost', 'root', '', 'myblog');
 if (isset($_POST['post-delete-btn'])) {
     $delete_post = new Post($database);
     $delete_post->DeletePost($_POST['slug']);
+    $_SESSION['delete'] = 'Post deleted';
     header('Location: ' . $_SERVER['HTTP_REFERER']); 
-
 }
 

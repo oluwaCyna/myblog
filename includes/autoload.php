@@ -9,6 +9,9 @@ function autoload ($class_name) {
         if (strpos($url, 'post') !== false) {
             $path = '../../Classes/';
         }
+        if (strpos($url, 'user/auth') !== false) {
+            $path = '../../../Classes/';
+        }
     }else if (strpos($url, 'admin/post') !== false) {
         $path = '../../Classes/';
     }else {

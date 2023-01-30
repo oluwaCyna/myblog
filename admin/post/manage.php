@@ -1,4 +1,4 @@
-<?php include_once '../../includes/post/view.php'; ?>
+<?php session_start(); include_once '../../includes/post/view.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="./dashboard.php" class="nav-link">
+              <a href="../dashboard.php" class="nav-link">
                 <i class="fa-solid fa-address-card nav-icon far"></i>
                 <p>
                   Dashboard
@@ -117,6 +117,20 @@
                 <div class="card-header">
                   <h3 class="card-title">All Posts</h3>
                 </div>
+
+                <?php if (array_key_exists("delete", $_SESSION)) {?>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong><?php echo($_SESSION['delete']) ?></strong>
+                                </div>
+              <?php unset($_SESSION["delete"]); } ?>
+
+                            <script>
+                                $(".alert").alert();
+                            </script>
+
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table class="table table-bordered">
@@ -146,13 +160,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                  <ul class="pagination pagination-sm m-0 float-right">
-                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                  </ul>
+                <?php echo $all_post->pages->page_links(); ?>
                 </div>
               </div>
               <!-- /.card -->
