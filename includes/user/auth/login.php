@@ -29,6 +29,9 @@ if (isset($_POST['login'])) {
         }else {
             unset($_SESSION['old']);
             $_SESSION["user"] = $login_entry->user;
+            $cookie_name = "user";
+            $cookie_value =  $_SESSION["user"]['email'].$_SESSION["user"]['username'];
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
             header('Location: /blog'); 
 
             unset($_SESSION['errors']);

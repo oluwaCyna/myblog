@@ -62,7 +62,7 @@ $all_post->ViewPostPaginate();
                         <h4>".$post['title']."</h4>
                         <p>".$post['body']."<a href='post-template.php?slug=".$post['slug']."'>continue</a></p>
                     </div>
-                  <span class='' style='font-size: 12px;'>".$post['category']." - by Admin - date - 52 likes - 17 comments.</span>
+                  <span class='' style='font-size: 12px;'>".$post['category']." - by Administrator - ".$post['date']." - 52 likes - 17 comments.</span>
                     </div>
                 </div>
                 ";}?>
