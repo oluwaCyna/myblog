@@ -264,28 +264,28 @@ class Post {
         if ($user_result->num_rows > 0) {
             $this->users = $user_result->fetch_all(MYSQLI_ASSOC);
         }else {
-            $this->users = 0;
+            $this->users = [];
         }
 
         $post_result = $this->conn->query($post_sql);
         if ($post_result->num_rows > 0) {
             $this->posts = $post_result->fetch_all(MYSQLI_ASSOC);
         }else {
-            $this->posts = 0;
+            $this->posts = [];
         }
 
         $comment_result = $this->conn->query($comment_sql);
         if ($comment_result->num_rows > 0) {
             $this->comments = $comment_result->fetch_all(MYSQLI_ASSOC);
         }else {
-            $this->comments = 0;
+            $this->comments = [];
         }
 
         $like_result = $this->conn->query($like_sql);
         if ($like_result->num_rows > 0) {
             $this->post_likes = $like_result->fetch_all(MYSQLI_ASSOC);
         }else {
-            $this->post_likes = 0;
+            $this->post_likes = [];
         }
     }
 }
