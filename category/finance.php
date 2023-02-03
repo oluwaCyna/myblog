@@ -54,7 +54,7 @@ require_once('../includes/post/category.php');
                     <div class='col d-flex flex-column justify-content-between'>
                         <div class='d-flex flex-column'>
                         <h4>".excerpt($post['title'])."</h4>
-                        <p>".the_excerpt ($post['paragraph1'])." ... <a href='post-template.php?slug=".$post['slug']."'>read more</a></p>
+                        <p>".the_excerpt ($post['paragraph1'])." ... <a href='/blog/post-template.php?slug=".$post['slug']."'>read more</a></p>
                     </div>
                   <span class='' style='font-size: 12px;'>".$post['category']." - by Administrator - ".$post['date']." - ".count($all_post->post_likes)." likes - ".count($all_post->comments)." comments.</span>
                     </div>

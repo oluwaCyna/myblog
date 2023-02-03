@@ -121,7 +121,7 @@ require_once('../includes/post/dashboard.php');
 <div class="icon">
 <i class="fas fa-user-plus"></i>
 </div>
-<a href="#" class="small-box-footer">
+<a href="./users.php" class="small-box-footer">
 More info <i class="fas fa-arrow-circle-right"></i>
 </a>
 </div>
@@ -137,7 +137,7 @@ More info <i class="fas fa-arrow-circle-right"></i>
 <div class="icon">
 <i class="fas fa-envelopes-bulk"></i>
 </div>
-<a href="#" class="small-box-footer">
+<a href="./post/manage.php" class="small-box-footer">
 More info <i class="fas fa-arrow-circle-right"></i>
 </a>
 </div>
@@ -153,7 +153,7 @@ More info <i class="fas fa-arrow-circle-right"></i>
 <div class="icon">
 <i class="fas fas fa-comments"></i>
 </div>
-<a href="#" class="small-box-footer">
+<a href="./comments.php" class="small-box-footer">
 More info <i class="fas fa-arrow-circle-right"></i>
 </a>
 </div>

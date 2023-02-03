@@ -8,4 +8,5 @@ $database = new mysqli('localhost', 'root', '', 'myblog');
 
 $comments = new Post($database);
 $comments->ViewCommentsPaginate();
+
 ?>

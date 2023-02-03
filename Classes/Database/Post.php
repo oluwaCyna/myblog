@@ -57,7 +57,7 @@ class Post {
         }else {
             $this->sql = "UPDATE posts SET title='$title', category='$category', paragraph1='$paragraph1',paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4' WHERE slug='$slug'";
         }
-        
+
         if ($this->conn->query($this->sql) === TRUE) {
             $this->message['add_post'] = 'Post updated successfully';
         }else {
@@ -120,6 +120,16 @@ class Post {
         // }
     }
 
+    public function UserId($id) {
+        $this->sql = "SELECT * FROM users WHERE (id='$id')";
+        $result = $this->conn->query($this->sql);
+        if ($result->num_rows > 0) {
+            $this->users = $result->fetch_assoc();
+        }else {
+            $this->users = [];
+        }
+    }
+
     public function ViewCommentsPaginate() {
         $this->sql = "SELECT * FROM comments";
         $this->pages = new Paginator(10, 'p');
@@ -156,7 +166,17 @@ class Post {
         if ($result->num_rows > 0) {
             $this->posts = $result->fetch_assoc();
         }else {
-            header('Location: index.php');  ;
+            $this->posts = [];
+        }
+    }
+
+    public function SinglePostId($id) {
+        $this->sql = "SELECT * FROM posts WHERE (id='$id')";
+        $result = $this->conn->query($this->sql);
+        if ($result->num_rows > 0) {
+            $this->posts = $result->fetch_assoc();
+        }else {
+            $this->posts = [];
         }
     }
 
@@ -242,28 +262,28 @@ class Post {
 
         $user_result = $this->conn->query($user_sql);
         if ($user_result->num_rows > 0) {
-            $this->users = $user_result->fetch_assoc();
+            $this->users = $user_result->fetch_all(MYSQLI_ASSOC);
         }else {
             $this->users = 0;
         }
 
         $post_result = $this->conn->query($post_sql);
         if ($post_result->num_rows > 0) {
-            $this->posts = $post_result->fetch_assoc();
+            $this->posts = $post_result->fetch_all(MYSQLI_ASSOC);
         }else {
             $this->posts = 0;
         }
 
         $comment_result = $this->conn->query($comment_sql);
         if ($comment_result->num_rows > 0) {
-            $this->comments = $comment_result->fetch_assoc();
+            $this->comments = $comment_result->fetch_all(MYSQLI_ASSOC);
         }else {
             $this->comments = 0;
         }
 
         $like_result = $this->conn->query($like_sql);
         if ($like_result->num_rows > 0) {
-            $this->post_likes = $like_result->fetch_assoc();
+            $this->post_likes = $like_result->fetch_all(MYSQLI_ASSOC);
         }else {
             $this->post_likes = 0;
         }
