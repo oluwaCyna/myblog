@@ -12,8 +12,13 @@ function autoload ($class_name) {
         if (strpos($url, 'user/auth') !== false) {
             $path = '../../../Classes/';
         }
-    }else if (strpos($url, 'admin/post') !== false) {
-        $path = '../../Classes/';
+    }else if (strpos($url, 'admin') !== false) {
+        $path = '../Classes/';
+        if (strpos($url, 'admin/post') !== false) {
+            $path = '../../Classes/';
+        }
+    }else if (strpos($url, 'category') !== false) {
+        $path = '../Classes/';
     }else {
         $path = "Classes/";
     }

@@ -1,5 +1,5 @@
 <?php
-require_once('./includes/post/archive.php');
+require_once('../includes/post/category.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +20,13 @@ require_once('./includes/post/archive.php');
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Theme style -->
-    <link rel="stylesheet" href="vendor/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../vendor/AdminLTE-3.2.0/dist/css/adminlte.min.css">
 
-    <title>MyBlogWebsite</title>
+    <title>Politics</title>
 
 </head>
 <body>
-    <?php include_once "common/navigation.php" ?>
+    <?php include_once "../common/navigation.php" ?>
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
@@ -49,12 +49,12 @@ require_once('./includes/post/archive.php');
                 echo "
                     <div class='card-body d-flex gap-3 row '>
                     <div class='col'>
-                    <img class='img-fluid pad' src='post-image/".$post['image']."' alt='Photo' style='aspect-ratio: 2 / 1;' >
+                    <img class='img-fluid pad' src='../post-image/".$post['image']."' alt='Photo' style='aspect-ratio: 2 / 1;' >
                     </div>
                     <div class='col d-flex flex-column justify-content-between'>
                         <div class='d-flex flex-column'>
                         <h4>".excerpt($post['title'])."</h4>
-                        <p>".the_excerpt ($post['paragraph1'])." ... <a href='post-template.php?slug=".$post['slug']."'>read more</a></p>
+                        <p>".the_excerpt($post['paragraph1'])." ... <a href='post-template.php?slug=".$post['slug']."'>read more</a></p>
                     </div>
                   <span class='' style='font-size: 12px;'>".$post['category']." - by Administrator - ".$post['date']." - ".count($all_post->post_likes)." likes - ".count($all_post->comments)." comments.</span>
                     </div>
@@ -79,6 +79,6 @@ require_once('./includes/post/archive.php');
     <!-- BS5 JS-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    <?php include_once "common/footer.php" ?>
+    <!-- <div style="position:fixed; bottom:0; width:100%"><?php include_once "../common/footer.php" ?></div> -->
 </body>
 </html>

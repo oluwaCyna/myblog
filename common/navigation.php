@@ -7,23 +7,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">All Posts</a>
+          <a class="nav-link active" aria-current="page" href="/blog">All Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sports</a>
+          <a class="nav-link" href="/blog/category/general.php">General</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Education</a>
+          <a class="nav-link" href="/blog/category/finance.php">Finance</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Politics</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a class="nav-link" href="/blog/category/sports.php">Sports</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.php" >Register</a>
-        </li> -->
+          <a class="nav-link" href="/blog/category/politics.php">Politics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/category/education.php">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/category/jokes.php">Jokes</a>
+        </li>
       </ul>
       <div class="d-flex align-items-center justify-content-center gap">
         <div><a class="nav-link" href="<?php echo $_SESSION['user'] ?? null ? "logout.php" : "register.php" ?>"><?php echo $_SESSION['user'] ?? null ? "Logout" : "Login/Register" ?></a></div>

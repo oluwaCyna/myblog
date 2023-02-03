@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once('../includes/post/user.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +28,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../vendor/AdminLTE-3.2.0/index3.html" class="brand-link">
+    <a href="/blog" class="brand-link">
       <img src="../vendor/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MyBlogWebsite</span>
     </a>
@@ -105,38 +110,65 @@
     <!-- Main content -->
     <section class="content">
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Default box -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Title</h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">All Posts</h3>
+        </div>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                Start creating your amazing application!
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                Footer
-              </div>
-              <!-- /.card-footer-->
-            </div>
-            <!-- /.card -->
-          </div>
+        <?php if (array_key_exists("delete", $_SESSION)) {?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong><?php echo($_SESSION['delete']) ?></strong>
+                        </div>
+      <?php unset($_SESSION["delete"]); } ?>
+
+                    <script>
+                        $(".alert").alert();
+                    </script>
+
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th style="width: 10%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $i = 1; foreach ($users->users as $user) { 
+              echo "<tr>
+                <td>$i</td>
+                <td><a>".$user['username']."</a></td>
+                <td><a>".$user['email']."</a></td>
+                <td>
+                  <form action='../includes/post/delete.php' method='POST' class=''>
+                    <input name='id' type='hidden' class='form-control' value='".$user['id']."'>
+                    <button name='user-delete-btn' class='btn btn-danger' type='submit' '>DELETE</button>
+                  </form>
+                </td>
+              </tr>"; $i++;} ?>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer clearfix">
+        <?php echo $users->pages->page_links(); ?>
         </div>
       </div>
-    </section>
-    <!-- /.content -->
+      <!-- /.card -->
+    </div>
+  </div>
+</div>
+</section>
+<!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
@@ -144,7 +176,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2023. Developed by <a href="https://wa.me/08133499101">Shina A.</a>.</strong> All rights reserved. <strong>Template from <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

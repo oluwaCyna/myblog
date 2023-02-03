@@ -1,6 +1,5 @@
 <?php
 require_once('./includes/post/single.php');
-print_r($_COOKIE);
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +45,13 @@ print_r($_COOKIE);
         </div>
         <img class="img-fluid pad" src="post-image/<?php echo $post->posts['image'] ?>" width="100%" alt="Photo">
 
-        <p class="pt-2"><?php echo $post->posts['body'] ?></p>
+        <p class="pt-2"><?php echo $post->posts['paragraph1'] ?></p>
+        <?php echo empty($post->posts['paragraph2']) ? "" : "<p class='pt-2'>".$post->posts['paragraph2']."</p>" ?>
+
+        <?php echo empty($post->posts['image2']) ? "" : "<img class='img-fluid pad' src='post-image/".$post->posts['image2']."' width='100%' alt='Photo'>" ?>
+
+        <?php echo empty($post->posts['paragraph3']) ? "" : "<p class='pt-2'>".$post->posts['paragraph3']."</p>" ?>
+        <?php echo empty($post->posts['paragraph4']) ? "" : "<p class='pt-2'>".$post->posts['paragraph4']."</p>" ?>
 
         <p class="notice float-left">Please <a class="text-primary" href="login.php">Login</a> or <a class="text-primary" href="register.php">Sign up</a> to <b>LIKE</b> or add <b>COMMENT</b> to this post.</p>
 
@@ -124,40 +129,30 @@ print_r($_COOKIE);
       $(".like").click(function() {
         $("#like-form").submit();
       })
+
       function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  let username = getCookie("user");
-  if (username != "") {
-    $(".notice").hide();
-  } else {
-    $(".like").hide();
-    $(".card-footer").hide();
-    $("#like-form").hide();
-  }
-}
-console.log(checkCookie());
-
-      if (document.cookie) {
-        
-      } else {
-       
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
       }
-  
+
+      if (getCookie("user") != "") {
+        $(".notice").hide();
+      } else {
+        $(".like").hide();
+        $(".card-footer").hide();
+        $("#like-form").hide();
+      }
 
     });
   </script>
@@ -165,6 +160,7 @@ console.log(checkCookie());
   <!-- BS5 JS-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+  <?php include_once "common/footer.php" ?>
 </body>
 
 </html>

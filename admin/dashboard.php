@@ -1,3 +1,6 @@
+<?php
+require_once('../includes/post/dashboard.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../vendor/AdminLTE-3.2.0/index3.html" class="brand-link">
+    <a href="/blog" class="brand-link">
       <img src="../vendor/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MyBlogWebsite</span>
     </a>
@@ -112,7 +115,7 @@
 
 <div class="small-box bg-primary">
 <div class="inner">
-<h3>44</h3>
+<h3><?php echo count($data->users) ?></h3>
 <p>User Registrations</p>
 </div>
 <div class="icon">
@@ -128,7 +131,7 @@ More info <i class="fas fa-arrow-circle-right"></i>
 
 <div class="small-box bg-info">
 <div class="inner">
-<h3>44</h3>
+<h3><?php echo count($data->posts) ?></h3>
 <p>Posts Uploaded</p>
 </div>
 <div class="icon">
@@ -144,7 +147,7 @@ More info <i class="fas fa-arrow-circle-right"></i>
 
 <div class="small-box bg-warning">
 <div class="inner">
-<h3>144</h3>
+<h3><?php echo count($data->comments) ?></h3>
 <p>Comments</p>
 </div>
 <div class="icon">
@@ -160,7 +163,7 @@ More info <i class="fas fa-arrow-circle-right"></i>
 
 <div class="small-box bg-success">
 <div class="inner">
-<h3>344</h3>
+<h3><?php echo count($data->post_likes) ?></h3>
 <p>Likes</p>
 </div>
 <div class="icon">
@@ -211,7 +214,7 @@ More info <i class="fas fa-arrow-circle-right"></i>
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2023. Developed by <a href="https://wa.me/08133499101">Shina A.</a>.</strong> All rights reserved. <strong>Template from <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

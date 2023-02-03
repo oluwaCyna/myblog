@@ -37,7 +37,7 @@ $_SESSION['slug'] = $_GET['slug'];
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../vendor/AdminLTE-3.2.0/index3.html" class="brand-link">
+    <a href="/blog" class="brand-link">
       <img src="../../vendor/AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MyBlogWebsite</span>
     </a>
@@ -126,7 +126,7 @@ $_SESSION['slug'] = $_GET['slug'];
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add new post</h3>
+                <h3 class="card-title">Update post</h3>
               </div>
 
               <?php if (array_key_exists("success", $_SESSION)) {?>
@@ -159,10 +159,12 @@ $_SESSION['slug'] = $_GET['slug'];
                         <label>Category</label>
                         <select class="form-control" name="category">
                           <option value="<?php echo($all_post->posts['category']) ?? null ?>"><?php echo($all_post->posts['category']) ?? null ?></option>
-                          <option value="Sport">Sport</option>
-                          <option value="Politics">Politics</option>
-                          <option value="Education">Education</option>
-                          <option value="General">General</option>
+                          <option value="general">General</option>
+                          <option value="finance">Finance</option>
+                          <option value="sports">Sport</option>
+                          <option value="politics">Politics</option>
+                          <option value="education">Education</option>
+                          <option value="jokes">Jokes</option>
                         </select>
                     </div>
                     <span class="form-text text-danger" role="alert" ><?php echo($_SESSION['error']['required']['category']) ?? null ?></span>
@@ -170,23 +172,56 @@ $_SESSION['slug'] = $_GET['slug'];
                     <!-- textarea -->
                     <div class="mb-2">
                     <div class="form-group m-0">
-                    <label>Body</label>
-                    <textarea class="form-control" rows="10" name="body" placeholder="Write ..."><?php echo($all_post->posts['body']) ?? null ?></textarea>
+                    <label>Paragraph one</label>
+                    <textarea class="form-control" rows="10" name="paragraph1" placeholder="Write ..."><?php echo($all_post->posts['paragraph1']) ?? null ?></textarea>
                     </div>
-                    <span class="form-text text-danger" role="alert" ><?php echo($_SESSION['error']['required']['body']) ?? null ?></span>
+                    <span class="form-text text-danger" role="alert" ><?php echo($_SESSION['error']['required']['paragraph1']) ?? null ?></span>
                     </div>
+
+                    <div class="mb-2">
+                    <div class="form-group m-0">
+                    <label>Paragraph two</label>
+                    <textarea class="form-control" rows="10" name="paragraph2" placeholder="Write ..."><?php echo($all_post->posts['paragraph2']) ?? null ?></textarea>
+                    </div>
+                    <span class="form-text text-danger" role="alert" ></span>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="form-group m-0">
+                    <label>Paragraph three</label>
+                    <textarea class="form-control" rows="10" name="paragraph3" placeholder="Write ..."><?php echo($all_post->posts['paragraph3']) ?? null ?></textarea>
+                    </div>
+                    <span class="form-text text-danger" role="alert" ></span>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="form-group m-0">
+                    <label>Paragraph four</label>
+                    <textarea class="form-control" rows="10" name="paragraph4" placeholder="Write ..."><?php echo($all_post->posts['paragraph4']) ?? null ?></textarea>
+                    </div>
+                    <span class="form-text text-danger" role="alert" ></span>
+                    </div>
+
                     <div class="mb-2">
                     <div class="form-group m-0">
                       <label for="image">Post featured image</label>
                       <input type="file" class="form-control" name="image" id="image">
                     </div>
-                    <span class="form-text text-danger" role="alert" ><?php echo($_SESSION['error']['required']['image']) ?? null ?></span>
+                    <span class="form-text text-danger" role="alert" ></span>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="form-group m-0">
+                      <label for="image">Extra image</label>
+                      <input type="file" class="form-control" name="image2" id="image">
+                    </div>
+                    <span class="form-text text-danger" role="alert" ></span>
                     </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" name="post-update-btn" class="btn btn-primary">ADD</button>
+                  <button type="submit" name="post-update-btn" class="btn btn-primary">UPDATE</button>
                 </div>
               </form>
             </div>
@@ -203,7 +238,7 @@ $_SESSION['slug'] = $_GET['slug'];
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2023. Developed by <a href="https://wa.me/08133499101">Shina A.</a>.</strong> All rights reserved. <strong>Template from <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

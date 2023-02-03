@@ -29,8 +29,13 @@ if (isset($_POST['login'])) {
         }else {
             unset($_SESSION['old']);
             $_SESSION["user"] = $login_entry->user;
+
+            function random_strings($length_of_string) {
+            $str = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@$%';
+            return substr(str_shuffle($str), 0, $length_of_string);
+        }
             $cookie_name = "user";
-            $cookie_value =  $_SESSION["user"]['email'].$_SESSION["user"]['username'];
+            $cookie_value =  random_strings(35);
             setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
             header('Location: /blog'); 
 

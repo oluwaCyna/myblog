@@ -3,7 +3,7 @@ namespace Post;
 
 use General\Validation;
 
-class Add extends Validation {
+class Update extends Validation {
     private $title;
     private $category;
     private $paragraph1;
@@ -28,7 +28,6 @@ class Add extends Validation {
         $this->validate_require_text('title', $this->title);
         $this->validate_require_text('category', $this->category);
         $this->validate_require_text('$paragraph1', $this->paragraph1);
-        $this->validate_require_file('image', $this->image);
         return $this->errors;
     }
 
