@@ -17,17 +17,7 @@ if (isset($_POST['post-update-btn'])) {
     }else {
         $update_post->character();
         unset($_SESSION["error"]);
-        // if (empty($update_post->validated['image'])){
-        //     $image = "";
-        // }else{
-        //     $image = $update_post->validated['image']; 
-        // }
-
-        // if (empty($update_post->validated['image2'])){
-        //     $image2 = "";
-        // }else{
-        //     $image2 = $update_post->validated['image2']; 
-        // }
+      
 echo $image;
         $upload = new Post($database);
         $upload->UpdatePost($update_post->validated['title'], $update_post->validated['category'], $update_post->validated['paragraph1'], $update_post->validated['paragraph2'], $update_post->validated['paragraph3'], $update_post->validated['paragraph4'], $update_post->validated['image'], $update_post->validated['image2'], $_SESSION["slug"]);
@@ -38,12 +28,3 @@ echo $image;
     }
 
 }
-
-
-// print_r($update_post->errors);
-// if (empty($update_post->errors)) {
-//     $update_post->character();
-//     print_r($update_post->validated);
-// }else {
-//     print_r($update_post->errors);
-// }

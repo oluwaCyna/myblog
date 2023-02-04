@@ -3,6 +3,7 @@ require_once('../includes/post/category.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +26,7 @@ require_once('../includes/post/category.php');
     <title>General</title>
 
 </head>
+
 <body>
     <?php include_once "../common/navigation.php" ?>
     <div class="container mt-5">
@@ -41,26 +43,28 @@ require_once('../includes/post/category.php');
             </div>
 
             <div class="card-body">
-            <div class='d-flex card'>
-            <?php $i = 1; foreach ($all_post->posts as $post) { 
-                $all_post->ViewComment($post['id']);
-                $all_post->ViewLike($post['id']);
+                <div class='d-flex card'>
+                    <?php $i = 1;
+                    foreach ($all_post->posts as $post) {
+                        $all_post->ViewComment($post['id']);
+                        $all_post->ViewLike($post['id']);
 
-                echo "
+                        echo "
                     <div class='card-body d-flex gap-3 row '>
                     <div class='col'>
-                    <img class='img-fluid pad' src='../post-image/".$post['image']."' alt='Photo' style='aspect-ratio: 2 / 1;' >
+                    <img class='img-fluid pad' src='../post-image/" . $post['image'] . "' alt='Photo' style='aspect-ratio: 2 / 1;' >
                     </div>
                     <div class='col d-flex flex-column justify-content-between'>
                         <div class='d-flex flex-column'>
-                        <h4>".excerpt($post['title'])."</h4>
-                        <p>".the_excerpt ($post['paragraph1'])." ... <a href='/blog/post-template.php?slug=".$post['slug']."'>read more</a></p>
+                        <h4>" . excerpt($post['title']) . "</h4>
+                        <p>" . the_excerpt($post['paragraph1']) . " ... <a href='../post-template.php?slug=" . $post['slug'] . "'>read more</a></p>
                     </div>
-                  <span class='' style='font-size: 12px;'>".$post['category']." - by Administrator - ".$post['date']." - ".count($all_post->post_likes)." likes - ".count($all_post->comments)." comments.</span>
+                  <span class='' style='font-size: 12px;'>" . $post['category'] . " - by Administrator - " . $post['date'] . " - " . count($all_post->post_likes) . " likes - " . count($all_post->comments) . " comments.</span>
                     </div>
                     <hr class='m-0 p-0 bg-dark'>
                 </div>
-                ";}?>
+                ";
+                    } ?>
                 </div>
             </div>
             <div class="card-footer">
@@ -70,15 +74,15 @@ require_once('../includes/post/category.php');
     </div>
 
     <script>
-       function viewPost (e) {
-        let postNumber = e.dataset.postNumber;
-        
-       }
+        function viewPost(e) {
+            let postNumber = e.dataset.postNumber;
 
+        }
     </script>
     <!-- BS5 JS-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <!-- <div style="position:fixed; bottom:0; width:100%"><?php include_once "../common/footer.php" ?></div> -->
 </body>
+
 </html>

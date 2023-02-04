@@ -32,12 +32,3 @@ if (isset($_POST['post-submit-btn'])) {
     }
 
 }
-
-
-// print_r($new_post->errors);
-// if (empty($new_post->errors)) {
-//     $new_post->character();
-//     print_r($new_post->validated);
-// }else {
-//     print_r($new_post->errors);
-// }

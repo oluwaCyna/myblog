@@ -9,12 +9,6 @@ $database = new mysqli('localhost', 'root', '', 'myblog');
 $all_post = new Post($database);
 $all_post->ViewPostPaginate();
 
-// $post->ViewComment($post->posts['id']);
-// if ($_SESSION != [] ){
-//     $post->LikeActivity($_SESSION['user']['id'], $post->posts['id']);
-// }
-// $post->ViewLike($post->posts['id']);
-
 // Extract Excerpt from the description
 function the_excerpt ($string){
     $excerpt = explode("~", chunk_split($string, 420, "~")); 

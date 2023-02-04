@@ -52,10 +52,6 @@ if (isset($_POST['login'])) {
             unset($_SESSION['failure']);
             header('Location: /blog'); 
         }
-        // }else {
-        //     $_SESSION['errors']['confirm_password'] = 'Password does not match';
-        //     header('Location: ' . $_SERVER['HTTP_REFERER']); 
-        // }
         
     }
 

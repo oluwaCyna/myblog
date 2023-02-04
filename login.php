@@ -1,11 +1,10 @@
-<?php 
+<?php
 session_start();
-// print_r($_SERVER);
-// require_once "./includes/user/auth/register.php";
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,9 +24,10 @@ session_start();
     <!-- Theme style -->
     <link rel="stylesheet" href="vendor/AdminLTE-3.2.0/dist/css/adminlte.min.css">
 
-    <title>MyBlogWebsite</title>
+    <title>Login</title>
 
 </head>
+
 <body>
     <?php include_once "common/navigation.php" ?>
     <div class="container mt-5">
@@ -36,37 +36,38 @@ session_start();
                 Login
             </div>
 
-            <?php if (array_key_exists("failure", $_SESSION)) {?>
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong><?php echo($_SESSION['failure']) ?></strong>
-                                </div>
-              <?php unset($_SESSION["failure"]); } ?>
+            <?php if (array_key_exists("failure", $_SESSION)) { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><?php echo ($_SESSION['failure']) ?></strong>
+                </div>
+            <?php unset($_SESSION["failure"]);
+            } ?>
 
-                            <script>
-                                $(".alert").alert();
-                            </script>
+            <script>
+                $(".alert").alert();
+            </script>
 
 
             <div class="card-body">
-            <form action="./includes/user/auth/login.php" method="post" id="login-form" name="register-form" novalidate>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" value="<?php echo $_SESSION['old']['email'] ?? null ?>">
-    <div id="email-error" class="form-text text-danger"><?php echo $_SESSION['errors']['required']['email'] ?? null ?><?php echo $_SESSION['errors']['email'] ?? null ?></div>
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" name="password">
-    <div id="password-error" class="form-text text-danger"><?php echo $_SESSION['errors']['required']['password'] ?? null ?><?php echo $_SESSION['errors']['password'] ?? null ?></div>
-  </div>
-  <div class="mb-3">
-    <label class="form-check-label">Don't have an account? <a class="text-primary" href="register.php">Register</a></label>
-  </div>
-  <button type="submit" class="btn btn-primary" name="login">Login</button>
-</form>
+                <form action="./includes/user/auth/login.php" method="post" id="login-form" name="register-form" novalidate>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php echo $_SESSION['old']['email'] ?? null ?>">
+                        <div id="email-error" class="form-text text-danger"><?php echo $_SESSION['errors']['required']['email'] ?? null ?><?php echo $_SESSION['errors']['email'] ?? null ?></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <div id="password-error" class="form-text text-danger"><?php echo $_SESSION['errors']['required']['password'] ?? null ?><?php echo $_SESSION['errors']['password'] ?? null ?></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-check-label">Don't have an account? <a class="text-primary" href="register.php">Register</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="login">Login</button>
+                </form>
 
             </div>
             <div class="card-footer">
@@ -79,4 +80,5 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <div style="position:fixed; bottom:0; width:100%"><?php include_once "common/footer.php" ?></div>
 </body>
+
 </html>
