@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include __DIR__.'includes/autoload.php';
+include 'includes/autoload.php';
 require_once 'vendor/autoload.php';
 use Database\Post;
 

@@ -23,6 +23,7 @@ function autoload ($class_name) {
         $path = "Classes/";
     }
     
+    $class_name = str_replace("\\","/",$class_name);
     $extension = ".php";
 
     $full_path = $path . $class_name . $extension;
