@@ -52,7 +52,7 @@ require_once('./includes/post/archive.php');
                         echo "
                     <div class='card-body d-flex gap-3 row '>
                     <div class='col'>
-                    <img class='img-fluid pad' src='post-image/" . $post['image'] . "' alt='Photo' style='aspect-ratio: 2 / 1;' >
+                    <img class='img-fluid pad' src='post-image/" . $post['image'] . "' alt='Photo' style='height:100%; width:100%;' >
                     </div>
                     <div class='col d-flex flex-column justify-content-between'>
                         <div class='d-flex flex-column'>

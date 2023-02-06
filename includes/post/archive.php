@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 include 'includes/autoload.php';
 require_once 'vendor/autoload.php';
 use Database\Post;
