@@ -5,7 +5,9 @@ include '../autoload.php';
 use Post\Add;
 use Database\Post;
 
-$database = new mysqli('localhost', 'root', '', 'myblog');
+// $database = new mysqli('localhost', 'root', '', 'myblog');
+$database = new mysqli("containers-us-west-183.railway.app", "root", "LeJXseePSOebenAcUBue", "railway");
+
 // Post submission
 if (isset($_POST['post-submit-btn'])) {
     $new_post = new Add($_POST['title'], $_POST['category'], $_POST['paragraph1'], $_POST['paragraph2'], $_POST['paragraph3'], $_POST['paragraph4'], $_FILES['image'], $_FILES['image2']);

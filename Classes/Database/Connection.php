@@ -9,7 +9,7 @@ class Connection {
     private $database;
     public $conn;
 
-    public function __construct($host_name="localhost", $username="root", $password="", $database="myblog") {
+    public function __construct($host_name="containers-us-west-183.railway.app", $username="root", $password="LeJXseePSOebenAcUBue", $database="railway") {
         $this->host_name = $host_name;
         $this->username = $username;
         $this->password = $password;

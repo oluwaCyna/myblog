@@ -5,7 +5,10 @@ include '../autoload.php';
 use Post\Add;
 use Database\Post;
 
-$database = new mysqli('localhost', 'root', '', 'myblog');
+// $database = new mysqli('localhost', 'root', '', 'myblog');
+$database = new mysqli("containers-us-west-183.railway.app", "root", "LeJXseePSOebenAcUBue", "railway");
+
+
 // Post deletion
 if (isset($_POST['post-delete-btn'])) {
     $delete_post = new Post($database);

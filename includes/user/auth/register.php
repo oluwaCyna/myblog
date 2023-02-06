@@ -5,7 +5,8 @@ include './../../autoload.php';
 use Auth\Register;
 use Database\Auth;
 // $errors = [];
-$database = new mysqli('localhost', 'root', '', 'myblog');
+// $database = new mysqli('localhost', 'root', '', 'myblog');
+$database = new mysqli("containers-us-west-183.railway.app", "root", "LeJXseePSOebenAcUBue", "railway");
 
 if (isset($_POST['register'])) {
     $register = new Register($_POST['email'], $_POST['username'], $_POST['password']);
