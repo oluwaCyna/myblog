@@ -6,7 +6,7 @@ use Auth\Register;
 use Database\Auth;
 // $errors = [];
 // $database = new mysqli('localhost', 'root', '', 'myblog');
-$database = new mysqli("containers-us-west-183.railway.app", "root", "LeJXseePSOebenAcUBue", "railway");
+$database = new mysqli("containers-us-west-183.railway.app", "root", "LeJXseePSOebenAcUBue", "railway", "6144");
 
 if (isset($_POST['register'])) {
     $register = new Register($_POST['email'], $_POST['username'], $_POST['password']);
