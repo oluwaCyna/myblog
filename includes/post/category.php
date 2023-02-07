@@ -7,8 +7,8 @@ use Database\Post;
 $uri = explode(".",$_SERVER['PHP_SELF']);
 $category =explode("/", $uri[0]);
 
-// $database = new mysqli('localhost', 'root', '', 'myblog');
-$database = new mysqli("containers-us-west-183.railway.app", "root", "LeJXseePSOebenAcUBue", "railway", "6144");
+$database = new mysqli('localhost', 'root', '123456789', 'myblog');
+
 
 $all_post = new Post($database);
 $all_post->ViewCategoryPostPaginate($category[3]);
