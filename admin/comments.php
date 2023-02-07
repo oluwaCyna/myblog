@@ -94,7 +94,7 @@ require_once('../includes/post/comment.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>ADMIN DASHBOARD</h1>
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

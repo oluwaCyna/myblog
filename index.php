@@ -50,9 +50,9 @@ require_once('./includes/post/archive.php');
                         $all_post->ViewLike($post['id']);
 
                         echo "
-                    <div class='card-body d-flex gap-3 row '>
+                    <div class='card-body d-flex flex-column gap-3 row flex-lg-row'>
                     <div class='col'>
-                    <img class='img-fluid pad' src='post-image/" . $post['image'] . "' alt='Photo' style='height:100%; width:100%;' >
+                    <a href='post-template.php?slug=" . $post['slug'] . "'><img class='img-fluid pad' src='post-image/" . $post['image'] . "' alt='Photo' style='height:100%; width:100%;' ></a>
                     </div>
                     <div class='col d-flex flex-column justify-content-between'>
                         <div class='d-flex flex-column'>
