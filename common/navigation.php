@@ -10,22 +10,22 @@
           <a class="nav-link active" aria-current="page" href="/blog">All Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/category/general.php">General</a>
+          <a class="nav-link" href="category/general.php">General</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/category/finance.php">Finance</a>
+          <a class="nav-link" href="category/finance.php">Finance</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/category/sports.php">Sports</a>
+          <a class="nav-link" href="category/sports.php">Sports</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/category/politics.php">Politics</a>
+          <a class="nav-link" href="category/politics.php">Politics</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/category/education.php">Education</a>
+          <a class="nav-link" href="category/education.php">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/category/jokes.php">Jokes</a>
+          <a class="nav-link" href="category/jokes.php">Jokes</a>
         </li>
       </ul>
       <div class="d-flex align-items-center justify-content-center gap">
@@ -35,3 +35,6 @@
     </div>
   </div>
 </nav>
+<marquee class="bg-warning" width="100%" direction="left" height="fit-content" scrollamount=15>
+I own no right to content published on this website. This website is only temporarily live to serve as portfolio/sample website. All content and data will be deleted immediately the site is offline. Thank you, your feedbacks are most appreciated.
+</marquee>
