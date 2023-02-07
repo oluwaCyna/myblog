@@ -40,7 +40,7 @@ class Post {
     }
 
     public function AddPost() {
-        $this->sql = "INSERT INTO posts(title, category, paragraph1, paragraph2, paragraph3, paragraph4, image, image2, slug) VALUES(?,?,?,?,?,?,?,?,?)";
+        $this->sql = "INSERT INTO posts (title, category, paragraph1, paragraph2, paragraph3, paragraph4, image, image2, slug) VALUES(?,?,?,?,?,?,?,?,?)";
         $this->statement = $this->conn->prepare($this->sql);
         $this->statement->bind_param('sssssssss', $this->title, $this->category, $this->paragraph1, $this->paragraph2, $this->paragraph3, $this->paragraph4, $this->image, $this->image2, $this->slug);
         $this->statement->execute();
@@ -80,7 +80,7 @@ class Post {
 
     public function ViewPostPaginate() {
         $this->sql = "SELECT * FROM posts";
-        $this->pages = new Paginator(7, 'p');
+        $this->pages = new Paginator(5, 'p');
         $rowCount = $this->conn->query('SELECT * FROM posts')->fetch_all(MYSQLI_ASSOC);
         $this->pages->set_total(count($rowCount)); 
 

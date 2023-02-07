@@ -151,7 +151,7 @@ require_once('../includes/post/comment.php');
                 <td>$i</td>
                 <td><a>".$comment['comment']."</a></td>
                 <td>".$comments->users['username']."</td>
-                <td><a href='/blog/post-template.php?slug=".$comments->posts['slug'] ?? ""."'>".$comments->posts['title'] ?? ""."</a></td>
+                <td><a href='/blog/post-template.php?slug=".($comments->posts['slug'] ?? ''). "'>".($comments->posts['title'] ?? '')."</a></td>
                 <td>
                   <form action='../includes/post/delete.php' method='POST' class=''>
                     <input name='id' type='hidden' class='form-control' value='".$comment['id']."'>

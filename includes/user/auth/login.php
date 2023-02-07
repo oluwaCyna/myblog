@@ -38,7 +38,7 @@ if (isset($_POST['login'])) {
             $cookie_name = "user";
             $cookie_value =  random_strings(35);
             setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-            header('Location: /blog'); 
+            header('Location: /'); 
 
             unset($_SESSION['errors']);
             $_SESSION["old"]['email'] = $_POST['email'];
@@ -51,7 +51,7 @@ if (isset($_POST['login'])) {
             unset($_SESSION['errors']);
             unset($_SESSION['old']);
             unset($_SESSION['failure']);
-            header('Location: /blog'); 
+            header('Location: /'); 
         }
         
     }

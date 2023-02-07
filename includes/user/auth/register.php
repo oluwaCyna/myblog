@@ -41,7 +41,7 @@ if (isset($_POST['register'])) {
                 $cookie_name = "user";
                 $cookie_value =  random_strings(35);
                 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-                header('Location: /blog'); 
+                header('Location: /'); 
             }
         }else {
             $_SESSION['errors']['confirm_password'] = 'Password does not match';

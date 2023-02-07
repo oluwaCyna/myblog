@@ -40,7 +40,7 @@ class Validation {
     }
 
     public function handle_image($name, $value, $path) {
-        $file_name = basename($value['name']);
+        $file_name = time().basename($value['name']);
         $tmp_name = $value['tmp_name'];
         $new_path = "../../$path/$file_name";
 

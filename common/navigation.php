@@ -1,31 +1,31 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary py-3" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/blog">MyBlogWebsite</a>
+    <a class="navbar-brand" href="/">MyBlogWebsite</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/blog">All Posts</a>
+          <a class="nav-link active" aria-current="page" href="/">All Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="category/general.php">General</a>
+          <a class="nav-link" href="<?php echo $_SERVER['HOST']?>/category/general.php">General</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="category/finance.php">Finance</a>
+          <a class="nav-link" href="<?php echo $_SERVER['HOST']?>/category/finance.php">Finance</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="category/sports.php">Sports</a>
+          <a class="nav-link" href="<?php echo $_SERVER['HOST']?>/category/sports.php">Sports</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="category/politics.php">Politics</a>
+          <a class="nav-link" href="<?php echo $_SERVER['HOST']?>/category/politics.php">Politics</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="category/education.php">Education</a>
+          <a class="nav-link" href="<?php echo $_SERVER['HOST']?>/category/education.php">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="category/jokes.php">Jokes</a>
+          <a class="nav-link" href="<?php echo $_SERVER['HOST']?>/category/jokes.php">Jokes</a>
         </li>
       </ul>
       <div class="d-flex align-items-center justify-content-center gap">

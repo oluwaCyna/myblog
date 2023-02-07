@@ -66,18 +66,17 @@ require_once('./includes/post/single.php');
         <?php $i = 1;
         foreach ($post->comments as $comment) {
           echo "                
-                <div class='card-comment'>
-                  <img class='img-circle img-sm' src='post-image/" . $post->posts['image'] . "' alt='User Image'>
-
-                  <div class='comment-text'>
-                    <span class='username'>
-                      " . General\User::get_username($comment['user_id']) . "
-                      <span class='text-muted float-right'>" . $comment['date'] . "</span>
-                    </span>
-                    " . $comment['comment'] . "
-                  </div>
-                </div>
-                ";
+          <div class=''>
+            <div class=''>
+              <span class='username fst-italic'>
+                " . General\User::get_username($comment['user_id']) . "
+                <span class='text-muted float-right'>" . $comment['date'] . "</span>
+              </span>
+              " . $comment['comment'] . "
+            </div>
+          </div>
+          <hr class=' bg-dark'/>
+          ";
         } ?>
       </div>
       <!-- /.card-footer -->
